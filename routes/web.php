@@ -26,6 +26,6 @@ Route::group([
     'namespace' => 'Admin'
 ], function() {
 
-    Route::get('/', 'MainController@index')->name('admin.main');
+    Route::get('/{any?}', 'MainController@index')->where('any', '.*');
 });
 
