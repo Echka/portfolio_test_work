@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19b42e45-3af1-4039-b075-4eb8747b7771" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="19b42e45-3af1-4039-b075-4eb8747b7771" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/phpoption/phpoption/" />
     <ignored path="$PROJECT_DIR$/vendor/symfony/polyfill-ctype/" />
@@ -29,7 +27,7 @@
         <counts>
           <entry key="env" value="1" />
           <entry key="js" value="5" />
-          <entry key="php" value="28" />
+          <entry key="php" value="48" />
           <entry key="vue" value="7" />
         </counts>
       </usages-collector>
@@ -37,7 +35,7 @@
         <counts>
           <entry key="Blade" value="14" />
           <entry key="JavaScript" value="5" />
-          <entry key="PHP" value="14" />
+          <entry key="PHP" value="34" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Vue.js" value="7" />
         </counts>
@@ -47,7 +45,7 @@
           <entry key="dummy" value="4" />
           <entry key="env" value="17" />
           <entry key="js" value="139" />
-          <entry key="php" value="368" />
+          <entry key="php" value="876" />
           <entry key="vue" value="84" />
         </counts>
       </usages-collector>
@@ -55,7 +53,7 @@
         <counts>
           <entry key="Blade" value="184" />
           <entry key="JavaScript" value="139" />
-          <entry key="PHP" value="184" />
+          <entry key="PHP" value="692" />
           <entry key="PLAIN_TEXT" value="21" />
           <entry key="Vue.js" value="84" />
         </counts>
@@ -65,10 +63,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_144917_create_education_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -99,6 +97,12 @@
         <option value="$PROJECT_DIR$/resources/js/components/HeaderComponent.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/profile/Page.vue" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_29_144826_create_profiles_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_29_145019_create_professional_skills_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_29_145042_create_lang_knowledge_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_29_144842_create_briefs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_29_144902_create_work_experiences_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_06_29_144917_create_education_table.php" />
       </list>
     </option>
   </component>
@@ -223,9 +227,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="848" />
+    <option name="x" value="754" />
     <option name="y" value="34" />
-    <option name="width" value="1005" />
+    <option name="width" value="1112" />
     <option name="height" value="1046" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -244,7 +248,24 @@
             <path>
               <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
               <item name="portfolio" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="portfolio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,15 +310,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593432753961</updated>
-      <workItem from="1593432756197" duration="8435000" />
+      <workItem from="1593432756197" duration="10261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8435000" />
+    <option name="totallyTimeSpent" value="10261000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="848" y="34" width="1005" height="1046" extended-state="0" />
+    <frame x="754" y="34" width="1112" height="1046" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
@@ -305,14 +326,14 @@
       <window_info id="Project Explorer" />
       <window_info id="Job Explorer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24921794" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22420263" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="DB Execution Console" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" weight="0.23580787" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.33515283" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32897604" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -488,8 +509,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_145042_create_lang_knowledge_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_145019_create_professional_skills_table.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <caret line="25" column="72" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="25" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_144826_create_profiles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_144842_create_briefs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_144902_create_work_experiences_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="61" lean-forward="true" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_06_29_144917_create_education_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="60" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
         </state>
       </provider>
     </entry>
