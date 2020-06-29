@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => 'auth',
+    'namespace' => 'Admin'
+], function() {
+
+    Route::get('/', 'MainController@index')->name('admin.main');
+});
+
