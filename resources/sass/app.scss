@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+div.nav_bar_vue {
+  display: inline-flex;
+}
+
+
+@media (max-width: 768px) {
+
+  div.nav_bar_vue {
+    display: block;
+  }
+}

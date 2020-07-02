@@ -26,6 +26,26 @@ Route::group([
     'namespace' => 'Admin'
 ], function() {
 
-    Route::get('/{any?}', 'MainController@index')->where('any', '.*');
+    Route::view('/', 'admin.main');
+    Route::view('/brief', 'admin.main');
+
+
+    Route::group(['prefix' => 'brief'], function() {
+
+        Route::get('get', 'BriefController@get');
+        Route::get('store', 'BriefController@store');
+        Route::delete('destroy/{id}', 'BriefController@destroy');
+        Route::put('update/{id}', 'BriefController@update');
+
+        Route::group(['middleware' => 'brief.check'], function() {
+            Route::group(['prefix' => 'education'], function() {
+
+                Route::get('get', 'EducationController@get');
+                Route::get('store', 'EducationController@store');
+                Route::delete('destroy/{id}', 'EducationController@destroy');
+                Route::put('update/{id}', 'EducationController@update');
+            });
+        });
+    });
 });
 
