@@ -30,6 +30,12 @@ Route::group([
     Route::view('/brief', 'admin.main');
 
 
+    Route::group(['prefix' => 'profile'], function() {
+
+        Route::get('get', 'ProfileController@get');
+        Route::put('update/{id}', 'ProfileController@update');
+    });
+
     Route::group(['prefix' => 'brief'], function() {
 
         Route::get('get', 'BriefController@get');
