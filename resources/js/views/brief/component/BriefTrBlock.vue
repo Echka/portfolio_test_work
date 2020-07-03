@@ -4,10 +4,17 @@
         <td>{{ brief.salary }}</td>
         <td>{{ brief.city }}</td>
         <td>
-            <button class="btn btn-info">Просмотр</button>
+            <router-link class="btn btn-info"
+                    :to="{ name: 'brief.show',
+                           params: {
+                                brief: brief,
+                                id: brief.id }}">Просмотр</router-link>
+
             <router-link class="btn btn-warning"
                          :to="{ name: 'brief.create_update',
-                                params: { brief: brief }}">Изменить</router-link>
+                                params: { brief: brief,
+                                          id: brief.id }}">Изменить</router-link>
+
             <button @click="deleteBrief(brief.id, index)" class="btn btn-danger">Удалить</button>
         </td>
     </tr>

@@ -84,13 +84,35 @@
                 else
                     this.storeBrief();
             },
+            getBrief: function () {
+
+                self = this;
+
+                let brief_id = this.$route.params.id;
+
+                axios({
+                    method: 'get',
+                    url: '/admin/brief/get/' + brief_id,
+                    params: self.brief
+                })
+                    .then(function (response) {
+
+                        if (response.status === 200) {
+                            self.brief = response.data.data;
+                        }
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log(error);
+                    });
+            },
             storeBrief: function () {
                 self = this;
 
                 axios({
                     method: 'get',
                     url: '/admin/brief/store',
-                    params: this.brief
+                    params: self.brief
                 })
                     .then(function (response) {
 
@@ -108,13 +130,19 @@
 
                 axios({
                     method: 'put',
-                    url: '/admin/brief/update/' + this.brief.id,
-                    params: this.brief
+                    url: '/admin/brief/update/' + self.brief.id,
+                    params: self.brief
                 })
                     .then(function (response) {
 
                         if (response.status === 200) {
-                            self.$router.push({ name: 'brief' });
+                            self.$router.push({
+                                name: 'brief.show',
+                                params: {
+                                    brief: self.brief,
+                                    id: self.brief.id
+                                }
+                            });
                         }
                     })
                     .catch(function (error) {
@@ -125,10 +153,10 @@
         },
         mounted: function () {
 
-            if (this.$route.params.brief !== null) {
-
+            if (this.$route.params.brief != null && this.$route.params.brief !== undefined)
                 this.brief = this.$route.params.brief;
-            }
+            else
+                this.getBrief();
         }
     }
 </script>

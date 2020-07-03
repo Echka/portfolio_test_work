@@ -15,14 +15,32 @@ use Illuminate\Support\Facades\Auth;
 class BriefController extends Controller implements IGet, IDelete, IUpdate, ICreate
 {
 
-    public function get(Request $request)
+    public function get(Request $request, $id)
     {
         try {
 
-            $briefs = Brief::where('user_id', Auth::user()->id)
-                ->get();
+            $brief = Brief::find($id);
 
-            return $this->sendResponse($briefs, 'OK', 200);
+            if ($brief == null)
+                return $this->sendResponse('', 'Not Found', 404);
+            else
+                return $this->sendResponse($brief, 'OK', 200);
+
+        } catch (QueryException $e) {
+            return $this->sendError('Internal server Error', 500);
+        }
+    }
+
+    public function getList(Request $request)
+    {
+        try {
+
+            $briefs = Brief::where('user_id', Auth::user()->id)->get();
+
+            if ($briefs == null)
+                return $this->sendResponse('', 'No Content', 204);
+            else
+                return $this->sendResponse($briefs, 'OK', 200);
 
         } catch (QueryException $e) {
             return $this->sendError('Internal server Error', 500);

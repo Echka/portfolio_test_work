@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller implements IGet, IUpdate, ICreate
 {
 
-    public function get(Request $request)
+    public function get(Request $request, $id = null)
     {
         try {
 
@@ -26,6 +26,38 @@ class ProfileController extends Controller implements IGet, IUpdate, ICreate
 
             if ($data)
                 return $this->sendResponse($data, 'OK', 200);
+            else
+                return $this->sendResponse('', 'Not Found', 404);
+
+        } catch (QueryException $e) {
+            return $this->sendError('Internal server Error', 500);
+        }
+    }
+
+    public function getList(Request $request)
+    {
+        try {
+
+            $profiles = Profile::all();
+
+            if ($profiles == null)
+                return $this->sendResponse('', 'No Content', 204);
+            else
+                return $this->sendResponse($profiles, 'OK', 200);
+
+        } catch (QueryException $e) {
+            return $this->sendError('Internal server Error', 500);
+        }
+    }
+
+    public function getByUser(Request $request, int $user_id)
+    {
+        try {
+
+            $profile = Profile::where('user_id', $user_id)->first();
+
+            if ($profile)
+                return $this->sendResponse($profile, 'OK', 200);
             else
                 return $this->sendResponse('', 'Not Found', 404);
 

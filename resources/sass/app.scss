@@ -8,10 +8,35 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+
+div.block_info {
+  border-top: 1px solid #ded8d8;
+  border-bottom: 1px solid #ded8d8;
+  padding: 20px 0;
+}
+
 div.nav_bar_vue {
   display: inline-flex;
 }
 
+.text_edit_link {
+  font-size: 16px;
+}
+
+.price_span {
+  color: #7b7878;
+}
+
+div.element_of_list {
+  border-radius: 15px;
+  border: 1px solid #ded8d8;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+h3.head_element_h3 {
+  font-weight: 900;
+}
 
 @media (max-width: 768px) {
 

@@ -27,7 +27,7 @@
             getBriefs: function () {
                 self = this;
 
-                axios.get('/admin/brief/get')
+                axios.get('/admin/brief/get_list')
                     .then(function (response) {
                         
                         if (response.status === 200)
