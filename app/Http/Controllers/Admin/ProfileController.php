@@ -11,9 +11,20 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
+use App\Traits\CRUD;
+use Illuminate\Database\Eloquent\Builder;
 
 class ProfileController extends Controller implements IGet, IUpdate, ICreate
 {
+
+    use CRUD;
+
+    public $model;
+
+    public function __construct()
+    {
+        $this->model = new Profile();
+    }
 
     public function get(Request $request, $id = null)
     {
@@ -28,22 +39,6 @@ class ProfileController extends Controller implements IGet, IUpdate, ICreate
                 return $this->sendResponse($data, 'OK', 200);
             else
                 return $this->sendResponse('', 'Not Found', 404);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function getList(Request $request)
-    {
-        try {
-
-            $profiles = Profile::all();
-
-            if ($profiles == null)
-                return $this->sendResponse('', 'No Content', 204);
-            else
-                return $this->sendResponse($profiles, 'OK', 200);
 
         } catch (QueryException $e) {
             return $this->sendError('Internal server Error', 500);

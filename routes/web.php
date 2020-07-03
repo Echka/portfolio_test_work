@@ -58,6 +58,24 @@ Route::group([
                 Route::put('update/{id}', 'EducationController@update');
             });
 
+            Route::group(['prefix' => 'lang_knowledge'], function() {
+
+                Route::get('get/{id}', 'LangKnowledgeController@get');
+                Route::get('get_list', 'LangKnowledgeController@getList');
+                Route::get('store', 'LangKnowledgeController@store');
+                Route::delete('destroy/{id}', 'LangKnowledgeController@destroy');
+                Route::put('update/{id}', 'LangKnowledgeController@update');
+            });
+
+            Route::group(['prefix' => 'prof_skill'], function() {
+
+                Route::get('get/{id}', 'ProfSkillController@get');
+                Route::get('get_list', 'ProfSkillController@getList');
+                Route::get('store', 'ProfSkillController@store');
+                Route::delete('destroy/{id}', 'ProfSkillController@destroy');
+                Route::put('update/{id}', 'ProfSkillController@update');
+            });
+
             Route::group(['prefix' => 'work_experiences'], function() {
 
                 Route::get('get/{id}', 'WorkExpController@get');

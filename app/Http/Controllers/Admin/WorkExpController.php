@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Model\WorkExperience;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Interfaces\ICreate;
 use App\Interfaces\IDelete;
@@ -11,101 +12,25 @@ use App\Interfaces\IGet;
 use App\Interfaces\IUpdate;
 use Illuminate\Database\QueryException;
 use Carbon\Carbon;
+use App\Traits\CRUD;
 
 class WorkExpController extends Controller implements IGet, IDelete, IUpdate, ICreate
 {
 
-    public function get(Request $request, $id)
+    use CRUD;
+
+    public $model;
+
+    public function __construct()
     {
-        try {
-
-            $experience = WorkExperience::find($id);
-
-            if ($experience == null)
-                return $this->sendResponse('', 'Not Found', 404);
-            else
-                return $this->sendResponse($experience, 'OK', 200);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
+        $this->model = new WorkExperience();
     }
 
-    public function getList(Request $request)
+    public function additionalCondition(Request $request, Builder $query)
     {
-        try {
+        $query->where('brief_id', $request['brief_id']);
 
-            $experiences = WorkExperience::where('brief_id', $request['brief_id'])->get();
-
-            if ($experiences == null)
-                return $this->sendResponse('', 'No Content', 204);
-            else
-                return $this->sendResponse($experiences, 'OK', 200);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function destroy(Request $request, int $id)
-    {
-        try {
-
-            if (WorkExperience::destroy($id))
-                return $this->sendResponse('', 'OK', 200);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function update(Request $request, int $id)
-    {
-        if ($this->isValid($request) == false)
-            return $this->sendError('Bad Request', 400);
-
-        try {
-
-            $experience = WorkExperience::where('id', $id)
-                ->first();
-
-            if ($experience == null)
-                return $this->sendResponse('', 'Not Found', 404);
-
-            $data = $this->fillData($request);
-
-            if ($experience->update($data))
-                return $this->sendResponse($experience, 'OK', 200);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function store(Request $request)
-    {
-        if ($this->isValid($request) == false)
-            return $this->sendError('Bad Request', 400);
-
-        try {
-
-            $data = $this->fillData($request);
-
-            $experience = WorkExperience::create($data);
-
-            if ($experience)
-                return $this->sendResponse($experience, 'OK', 201);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-
-            return $this->sendError('Internal server Error', 500);
-        }
+        return $query;
     }
 
     public function isValid(Request $request) : bool

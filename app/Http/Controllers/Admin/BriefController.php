@@ -11,102 +11,26 @@ use App\Model\Brief;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Traits\CRUD;
+use Illuminate\Database\Eloquent\Builder;
 
 class BriefController extends Controller implements IGet, IDelete, IUpdate, ICreate
 {
 
-    public function get(Request $request, $id)
+    use CRUD;
+
+    public $model;
+
+    public function __construct()
     {
-        try {
-
-            $brief = Brief::find($id);
-
-            if ($brief == null)
-                return $this->sendResponse('', 'Not Found', 404);
-            else
-                return $this->sendResponse($brief, 'OK', 200);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
+        $this->model = new Brief();
     }
 
-    public function getList(Request $request)
+    public function additionalCondition(Request $request, Builder $query)
     {
-        try {
+        $query->where('user_id', Auth::user()->id);
 
-            $briefs = Brief::where('user_id', Auth::user()->id)->get();
-
-            if ($briefs == null)
-                return $this->sendResponse('', 'No Content', 204);
-            else
-                return $this->sendResponse($briefs, 'OK', 200);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function destroy(Request $request, int $id)
-    {
-        try {
-
-            if (Brief::destroy($id))
-                return $this->sendResponse('', 'OK', 200);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function update(Request $request, int $id)
-    {
-        if ($this->isValid($request) == false)
-            return $this->sendError('Bad Request', 400);
-
-        try {
-
-            $brief = Brief::where('id', $id)
-                ->where('user_id', Auth::user()->id)
-                ->first();
-
-            if ($brief == null)
-                return $this->sendResponse('', 'Not Found', 404);
-
-            $data = $this->fillData($request);
-
-            if ($brief->update($data))
-                return $this->sendResponse($brief, 'OK', 200);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function store(Request $request)
-    {
-        if ($this->isValid($request) == false)
-            return $this->sendError('Bad Request', 400);
-
-        try {
-
-            $data = $this->fillData($request);
-
-            $brief = Brief::create($data);
-
-            if ($brief)
-                return $this->sendResponse($brief, 'OK', 201);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-
-            return $this->sendError('Internal server Error', 500);
-        }
+        return $query;
     }
 
     public function isValid(Request $request) : bool

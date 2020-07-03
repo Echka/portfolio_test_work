@@ -7,7 +7,7 @@
                                           id: brief.id }}">Редактирование резюме</router-link></h3>
         <p>Город: {{ brief.city }}</p>
         <p>Дополнительная информация:</p>
-        <p>{{ brief.additional_info }}</p>
+        <p v-html="brief.additional_info"></p>
     </div>
 </template>
 

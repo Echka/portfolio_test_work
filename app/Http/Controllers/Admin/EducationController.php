@@ -3,109 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Education;
+use Illuminate\Http\Request;
 use App\Interfaces\ICreate;
 use App\Interfaces\IDelete;
 use App\Interfaces\IGet;
 use App\Interfaces\IUpdate;
-use App\Model\Education;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Traits\CRUD;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
+
 
 class EducationController extends Controller implements IGet, IDelete, IUpdate, ICreate
 {
 
-    public function get(Request $request, $id)
+    use CRUD;
+
+    public $model;
+
+    public function __construct()
     {
-        try {
-
-            $brief = Brief::find($id);
-
-            if ($brief == null)
-                return $this->sendResponse('', 'Not Found', 404);
-            else
-                return $this->sendResponse($brief, 'OK', 200);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
+        $this->model = new Education();
     }
 
-    public function getList(Request $request)
+    public function additionalCondition(Request $request, Builder $query)
     {
-        try {
+        $query->where('brief_id', $request['brief_id']);
 
-            $briefs = Brief::where('user_id', Auth::user()->id)->get();
-
-            if ($briefs == null)
-                return $this->sendResponse('', 'No Content', 204);
-            else
-                return $this->sendResponse($briefs, 'OK', 200);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function destroy(Request $request, int $id)
-    {
-        try {
-
-            if (Brief::destroy($id))
-                return $this->sendResponse('', 'OK', 200);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function update(Request $request, int $id)
-    {
-        if ($this->isValid($request) == false)
-            return $this->sendError('Bad Request', 400);
-
-        try {
-
-            $brief = Brief::where('id', $id)
-                ->where('user_id', Auth::user()->id)
-                ->first();
-
-            if ($brief == null)
-                return $this->sendResponse('', 'Not Found', 404);
-
-            $data = $this->fillData($request);
-
-            if ($brief->update($data))
-                return $this->sendResponse($brief, 'OK', 200);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-            return $this->sendError('Internal server Error', 500);
-        }
-    }
-
-    public function store(Request $request)
-    {
-        if ($this->isValid($request) == false)
-            return $this->sendError('Bad Request', 400);
-
-        try {
-
-            $data = $this->fillData($request);
-
-            $brief = Brief::create($data);
-
-            if ($brief)
-                return $this->sendResponse($brief, 'OK', 201);
-            else
-                return $this->sendResponse('', 'Not Modified', 304);
-
-        } catch (QueryException $e) {
-
-            return $this->sendError('Internal server Error', 500);
-        }
+        return $query;
     }
 
     public function isValid(Request $request) : bool
@@ -113,10 +40,12 @@ class EducationController extends Controller implements IGet, IDelete, IUpdate, 
         try {
 
             $request->validate([
-                'position' => 'required|max:50',
-                'salary' => 'required|int',
-                'city' => 'required|max:20',
-                'additional_info' => 'nullable'
+                'title' => 'max:100',
+                'date_start' => 'nullable',
+                'date_finish' => 'nullable',
+                'specialty' => 'max:50',
+                'city' => 'max:20',
+                'type_of_education' => 'max:20'
             ]);
 
             return true;
@@ -130,12 +59,22 @@ class EducationController extends Controller implements IGet, IDelete, IUpdate, 
 
     public function fillData(Request $request) : array
     {
+        $dateStart = ($request['date_start'] ?? null)
+            ? Carbon::parse($request['date_start'])
+            : null;
+
+        $dateFinish = ($request['date_finish'] ?? null)
+            ? Carbon::parse($request['date_finish'])
+            : null;
+
         return [
-            'position' => $request['position'],
-            'salary' => $request['salary'],
+            'date_start' => $dateStart,
+            'date_finish' => $dateFinish,
+            'title' => $request['title'],
+            'specialty' => $request['specialty'],
             'city' => $request['city'],
-            'additional_info' => $request['additional_info'],
-            'user_id' => Auth::user()->id
+            'type_of_education' => $request['type_of_education'],
+            'brief_id' => $request['brief_id']
         ];
     }
 }

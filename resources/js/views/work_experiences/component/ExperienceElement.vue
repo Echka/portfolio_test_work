@@ -10,7 +10,7 @@
         <experience-u-c v-bind:style="{ display: exp.status === 'show' ? 'none' : 'block' }"
                         v-bind:id="exp.id + 'experienceUC'"
                         v-bind:exp=exp
-                        @close-experience="$emit('close-experience')"
+                        @close-experience="$emit('close-experience', index)"
                         @update-experience="updateExperience"
                         @set-status-show="setStatusShow"
                         @store-experience="storeExperience"></experience-u-c>
@@ -82,24 +82,6 @@
 
                 if (this.exp.date_finish != null)
                     this.exp.date_finish = moment(this.exp.date_finish, 'YYYY-MM-DD HH:mm:ss').format('YYYY-MM');
-            },
-            getExperiences: function () {
-                let self = this;
-
-                axios({
-                    method: 'get',
-                    url: '/admin/brief/work_experiences/get_list',
-                    params: { brief_id: self.$route.params.id }
-                })
-                    .then(function (response) {
-
-                        if (response.status === 200)
-                            self.experiences = response.data.data;
-                    })
-                    .catch(function (error) {
-                        // handle error
-                        console.log(error);
-                    });
             },
             storeExperience: function () {
                 let self = this;

@@ -57,7 +57,7 @@
 
         <div v-bind:id="exp.id + 'experienceC'">
             <button class="btn btn-success" @click="$emit('store-experience')">Сохранить</button>
-            <button class="btn btn-danger" @click="$emit('close-experience', index)">Закрыть</button>
+            <button class="btn btn-danger" @click="$emit('close-experience')">Закрыть</button>
         </div>
     </div>
 </template>

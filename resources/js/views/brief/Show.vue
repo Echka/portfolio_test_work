@@ -9,6 +9,12 @@
 
             <experience-block></experience-block>
 
+            <education-block></education-block>
+
+            <prof-skill-block></prof-skill-block>
+
+            <language-block></language-block>
+
             <div>
                 <router-link :to="{ name: 'brief' }">Вернутся</router-link>
             </div>
@@ -20,12 +26,18 @@
     import BriefBlock from "./component/BriefShowBlock"
     import ProfileBlock from "../profile/component/ProfileShowBlock"
     import ExperienceBlock from "../work_experiences/component/ExperienceBlock"
+    import EducationBlock from "../education/component/EducationBlock"
+    import ProfSkillBlock from "../professional_skills/component/ProfSkillBlock"
+    import LanguageBlock from "../lang_knowledge/component/LanguageBlock"
 
     export default {
         components: {
             BriefBlock,
             ProfileBlock,
-            ExperienceBlock
+            ExperienceBlock,
+            EducationBlock,
+            ProfSkillBlock,
+            LanguageBlock
         },
         data () {
             return {
