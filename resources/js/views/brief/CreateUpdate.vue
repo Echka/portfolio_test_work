@@ -53,7 +53,7 @@
             </div>
 
             <button class="btn btn-success" @click="detectNeedMethod">
-                {{ this.$route.params.brief == null ? 'Создать' : 'Редактировать' }}
+                {{ this.brief.id == undefined ? 'Создать' : 'Редактировать' }}
             </button>
 
             <div>
@@ -79,7 +79,7 @@
         methods: {
             detectNeedMethod() {
 
-                if (this.$route.params.brief !== null)
+                if (this.brief.id !== undefined)
                     this.updateBrief();
                 else
                     this.storeBrief();
@@ -89,6 +89,9 @@
                 self = this;
 
                 let brief_id = this.$route.params.id;
+
+                if (brief_id == undefined)
+                    return;
 
                 axios({
                     method: 'get',

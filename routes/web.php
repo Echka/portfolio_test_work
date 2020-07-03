@@ -27,9 +27,6 @@ Route::group([
 ], function() {
 
     Route::view('/', 'admin.main');
-    Route::view('/brief', 'admin.main');
-    Route::view('/brief/show/{id}', 'admin.main');
-    Route::view('/brief/create_update/{id}', 'admin.main');
 
 
     Route::group(['prefix' => 'profile'], function() {
@@ -41,6 +38,11 @@ Route::group([
     });
 
     Route::group(['prefix' => 'brief'], function() {
+
+        Route::view('/', 'admin.main');
+        Route::view('/show/{id}', 'admin.main');
+        Route::view('/update/{id}', 'admin.main');
+        Route::view('/create', 'admin.main');
 
         Route::get('get/{id}', 'BriefController@get');
         Route::get('get_list', 'BriefController@getList');

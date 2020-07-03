@@ -2,33 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19b42e45-3af1-4039-b075-4eb8747b7771" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Traits/CRUD.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/education/component/EducationBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/education/component/EducationElement.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/education/component/EducationShow.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/education/component/EducationUpdateCreate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageElement.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageShow.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageUpdateCreate.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/professional_skills/component/ProfSkillBlock.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/professional_skills/component/ProfSkillElement.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/professional_skills/component/ProfSkillShow.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/views/professional_skills/component/ProfSkillUpdateCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/13bf5342-ffce-45e3-a354-658696bf8c20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/13bf5342-ffce-45e3-a354-658696bf8c20.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BriefController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BriefController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/EducationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/EducationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LangKnowledgeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LangKnowledgeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfSkillController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfSkillController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/WorkExpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/WorkExpController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/brief/Show.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/brief/Show.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/brief/component/BriefShowBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/brief/component/BriefShowBlock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceBlock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceElement.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceElement.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceUpdateCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceUpdateCreate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/brief/Page.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/brief/Page.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/views/brief/component/BriefTrBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/views/brief/component/BriefTrBlock.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -96,13 +75,13 @@
         <counts>
           <entry key="ExperienceBlock" value="1" />
           <entry key="env" value="1" />
-          <entry key="js" value="18" />
+          <entry key="js" value="20" />
           <entry key="json" value="1" />
-          <entry key="php" value="265" />
+          <entry key="php" value="266" />
           <entry key="profiles" value="4" />
           <entry key="scss" value="7" />
           <entry key="sql" value="1" />
-          <entry key="vue" value="146" />
+          <entry key="vue" value="150" />
           <entry key="work_experiences" value="1" />
         </counts>
       </usages-collector>
@@ -111,33 +90,33 @@
           <entry key="Blade" value="30" />
           <entry key="Database Element" value="5" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="18" />
-          <entry key="PHP" value="235" />
+          <entry key="JavaScript" value="20" />
+          <entry key="PHP" value="236" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="7" />
           <entry key="Scratch" value="1" />
-          <entry key="Vue.js" value="146" />
+          <entry key="Vue.js" value="150" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="4" />
           <entry key="env" value="17" />
-          <entry key="js" value="238" />
-          <entry key="php" value="5700" />
+          <entry key="js" value="246" />
+          <entry key="php" value="5723" />
           <entry key="scss" value="112" />
           <entry key="txt" value="22" />
-          <entry key="vue" value="9412" />
+          <entry key="vue" value="9477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="202" />
-          <entry key="JavaScript" value="238" />
-          <entry key="PHP" value="5498" />
+          <entry key="JavaScript" value="246" />
+          <entry key="PHP" value="5521" />
           <entry key="PLAIN_TEXT" value="43" />
           <entry key="SCSS" value="112" />
-          <entry key="Vue.js" value="9412" />
+          <entry key="Vue.js" value="9477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -150,19 +129,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/views/brief/Show.vue">
+        <entry file="file://$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="64">
+              <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefShowBlock.vue">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+            <state relative-caret-position="333">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -207,12 +186,8 @@
         <option value="$PROJECT_DIR$/resources/js/views/brief/component/BriefList.vue" />
         <option value="$PROJECT_DIR$/app/Model/User.php" />
         <option value="$PROJECT_DIR$/resources/js/views/profile/Page.vue" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
-        <option value="$PROJECT_DIR$/resources/js/views/brief/component/BriefTrBlock.vue" />
         <option value="$PROJECT_DIR$/app/Interfaces/IGet.php" />
-        <option value="$PROJECT_DIR$/resources/js/views/brief/Page.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/profile/component/ProfileShowBlock.vue" />
-        <option value="$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/BriefDataAccess.php" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/js/views/work_experiences/component/ExperienceShow.vue" />
@@ -223,7 +198,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfileController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ProfSkillController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/WorkExpController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_07_03_154838_after_education_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/EducationController.php" />
         <option value="$PROJECT_DIR$/resources/js/views/education/component/EducationShow.vue" />
@@ -243,6 +217,11 @@
         <option value="$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageBlock.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageElement.vue" />
         <option value="$PROJECT_DIR$/resources/js/views/brief/component/BriefShowBlock.vue" />
+        <option value="$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
+        <option value="$PROJECT_DIR$/resources/js/views/brief/Page.vue" />
+        <option value="$PROJECT_DIR$/resources/js/views/brief/component/BriefTrBlock.vue" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -481,12 +460,12 @@
       <workItem from="1593432756197" duration="22000000" />
       <workItem from="1593528215269" duration="20739000" />
       <workItem from="1593693111232" duration="32332000" />
-      <workItem from="1593775602857" duration="13198000" />
+      <workItem from="1593775602857" duration="13819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88269000" />
+    <option name="totallyTimeSpent" value="88890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="25" width="1867" height="1055" extended-state="6" />
@@ -511,7 +490,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.2854054" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.2854054" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.32897604" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -541,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/console.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -555,13 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -576,20 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35340">
           <caret line="2356" column="16" selection-start-line="2356" selection-start-column="16" selection-end-line="2356" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefTrBlock.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="43" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefList.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -839,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/js/views/lang_knowledge/component/LanguageBlock.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -863,10 +807,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/Page.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefShowBlock.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        <state relative-caret-position="90">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -877,10 +821,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefShowBlock.vue">
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+        <state relative-caret-position="540">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+          <folding>
+            <element signature="e#104#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/Page.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefTrBlock.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/component/BriefList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="16" lean-forward="true" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/views/brief/CreateUpdate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>

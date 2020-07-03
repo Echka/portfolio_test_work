@@ -29,8 +29,14 @@ const router = new VueRouter({
             component: Brief
         },
         {
-            path: '/admin/brief/create_update/:id',
-            name: 'brief.create_update',
+            path: '/admin/brief/update/:id',
+            name: 'brief.update',
+            component: BriefCreateUpdate,
+            props: true
+        },
+        {
+            path: '/admin/brief/create/',
+            name: 'brief.create',
             component: BriefCreateUpdate,
             props: true
         },

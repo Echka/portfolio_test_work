@@ -5,8 +5,7 @@
         <div class="card-body">
             <brief-list v-bind:briefs=briefs></brief-list>
 
-            <router-link :to="{ name: 'brief.create_update',
-                                params: { brief: null }}">Создать резюме</router-link>
+            <router-link :to="{ name: 'brief.create' }">Создать резюме</router-link>
         </div>
     </div>
 </template>

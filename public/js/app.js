@@ -2036,11 +2036,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     detectNeedMethod: function detectNeedMethod() {
-      if (this.$route.params.brief !== null) this.updateBrief();else this.storeBrief();
+      if (this.brief.id !== undefined) this.updateBrief();else this.storeBrief();
     },
     getBrief: function getBrief() {
       self = this;
       var brief_id = this.$route.params.id;
+      if (brief_id == undefined) return;
       axios({
         method: 'get',
         url: '/admin/brief/get/' + brief_id,
@@ -2110,7 +2111,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_BriefList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./component/BriefList */ "./resources/js/views/brief/component/BriefList.vue");
-//
 //
 //
 //
@@ -60799,9 +60799,7 @@ var render = function() {
         [
           _vm._v(
             "\n            " +
-              _vm._s(
-                this.$route.params.brief == null ? "Создать" : "Редактировать"
-              ) +
+              _vm._s(this.brief.id == undefined ? "Создать" : "Редактировать") +
               "\n        "
           )
         ]
@@ -60875,15 +60873,9 @@ var render = function() {
       [
         _c("brief-list", { attrs: { briefs: _vm.briefs } }),
         _vm._v(" "),
-        _c(
-          "router-link",
-          {
-            attrs: {
-              to: { name: "brief.create_update", params: { brief: null } }
-            }
-          },
-          [_vm._v("Создать резюме")]
-        )
+        _c("router-link", { attrs: { to: { name: "brief.create" } } }, [
+          _vm._v("Создать резюме")
+        ])
       ],
       1
     )
@@ -61109,7 +61101,7 @@ var render = function() {
             staticClass: "btn btn-warning",
             attrs: {
               to: {
-                name: "brief.create_update",
+                name: "brief.update",
                 params: { brief: _vm.brief, id: _vm.brief.id }
               }
             }
@@ -78147,8 +78139,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'brief',
     component: _views_brief_Page__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
-    path: '/admin/brief/create_update/:id',
-    name: 'brief.create_update',
+    path: '/admin/brief/update/:id',
+    name: 'brief.update',
+    component: _views_brief_CreateUpdate__WEBPACK_IMPORTED_MODULE_6__["default"],
+    props: true
+  }, {
+    path: '/admin/brief/create/',
+    name: 'brief.create',
     component: _views_brief_CreateUpdate__WEBPACK_IMPORTED_MODULE_6__["default"],
     props: true
   }, {

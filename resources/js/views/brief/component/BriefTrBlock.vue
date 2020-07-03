@@ -11,7 +11,7 @@
                                 id: brief.id }}">Просмотр</router-link>
 
             <router-link class="btn btn-warning"
-                         :to="{ name: 'brief.create_update',
+                         :to="{ name: 'brief.update',
                                 params: { brief: brief,
                                           id: brief.id }}">Изменить</router-link>
 
